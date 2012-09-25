@@ -2,11 +2,8 @@
 
 ## Преамбула
 
-В данной статье я расскажу о новинка в DOM API, которые мы можем использовать уже сейчас или в ближайшем будущем.
-Публикация статьи приурочена к радостному событию [реализации](https://plus.google.com/u/0/115203843155141445032/posts/VGDqpLHsUjn)
-некоторых новых DOM4 API методов в Google Chrome.
-Многие методы и свойства можно использовать уже сейчас, некоторые из них работают через префиксы, но к каждому методу или свойству я
-постараюсь дать Polyfill, реализующий их или отбрасывающий браузерные свойства.
+В данной статье я расскажу о новинка в DOM API, которые мы можем использовать уже сейчас или в ближайшем будущем. Публикация статьи приурочена к радостному событию [реализации](https://plus.google.com/u/0/115203843155141445032/posts/VGDqpLHsUjn) некоторых новых DOM4 API методов в Google Chrome.
+Многие методы и свойства можно использовать уже сейчас, некоторые из них работают через префиксы, но к каждому методу или свойству я постараюсь дать Polyfill, реализующий их или отбрасывающий браузерные префиксы.
   
 ## DOM4 Mutation methods
 
@@ -44,10 +41,10 @@ _Polyfill этих методов для всех браузеров есть в
 
 [Спецификация](http://www.w3.org/TR/selectors-api2/)
 
-    * `document.querySelector(string, NodeRef{(Node|NodeList|Array.<Node>)})`
-    * `document.querySelectorAll(string, NodeRef{(Node|NodeList|Array.<Node>)})`
-    * `document.find(string, NodeRef{(Node|NodeList|Array.<Node>)})`
-    * `document.findAll(string, NodeRef{(Node|NodeList|Array.<Node>)})`
+* `document.querySelector(string, NodeRef{(Node|NodeList|Array.<Node>)})`
+* `document.querySelectorAll(string, NodeRef{(Node|NodeList|Array.<Node>)})`
+* `document.find(string, NodeRef{(Node|NodeList|Array.<Node>)})`
+* `document.findAll(string, NodeRef{(Node|NodeList|Array.<Node>)})`
     
 Старые добрые методы querySelector\[All\] обзавелись вторым параметром, но только в реализации для `document`. А также добавились новые методы find\[All\].
 
@@ -90,8 +87,7 @@ DOM API для работы с CSS-классами элемента.
 * `toggle(boolean: class{string})` Удаляет _class_ в случеи его наличия из **element.className** и возвращает **false**. Добавляет в случае его отсутсвие в **element.className** и возвращает **true**.
 * `contains(boolean: class{string})` Проверяет _class_ на его наличие в **element.className**. Возвращает **true** или **false** соответственно.
 
-Ранее, методы `add` и `remove` работали только с одним классом за раз, а недавно в стандарт была [добавлена возможность](http://lists.w3.org/Archives/Public/www-dom/2012JulSep/0101.html)
-работать с несколькими CSS-классами:
+Ранее, методы `add` и `remove` работали только с одним классом за раз, а недавно в стандарт была [добавлена возможность](http://lists.w3.org/Archives/Public/www-dom/2012JulSep/0101.html) работать с несколькими CSS-классами:
 
     document.documentElement.classList.add("test1", "test2", "test3")
     document.documentElement.classList.remove("test1", "test2", "test3")
@@ -111,9 +107,7 @@ _Polyfill для `classList`, пока старой спецификации, е
 
     event = new Event("click")
 
-В конструктор мы можем передать любое текстовое значение в качестве `e.type`, вторым параметром передаётся объект, который
-содержит инициализационные параметры **bubbles** и **cancelable**. **bubbles** установленное в **false** предотвратит всплытие события.
-**cancelable** установленное в **false** предотвратит отмену события через метод `preventDefault`.
+В конструктор мы можем передать любое текстовое значение в качестве `e.type`, вторым параметром передаётся объект, который содержит инициализационные параметры **bubbles** и **cancelable**. **bubbles** установленное в **false** предотвратит всплытие события. **cancelable** установленное в **false** предотвратит отмену события через метод `preventDefault`.
 По-умолчанию, **bubbles** и **cancelable** равны **false**.
 
     event = new Event("some:event", {bubbles : true, cancelable : false})
@@ -127,8 +121,7 @@ _Polyfill для `classList`, пока старой спецификации, е
 
 Замечу, что при этом все созданные таким образом события являются _обычными_ событиями, те `new Event("click")` создаст не **MouseEvent**, а просто **Event**.
 
-Второй класс для создания событий - это `CustomEvent`. Использование этого класса отличается только тем, что и инициализационный объект можно передать
-свойство **detail**
+Второй класс для создания событий - это `CustomEvent`. Использование этого класса отличается только тем, что и инициализационный объект можно передать свойство **detail**
 
     event = new CustomEvent("somecustom:event", {bubbles : true, cancelable : false, detail : {"some data" : 123}})
 
@@ -186,7 +179,7 @@ _Polyfill для `classList`, пока старой спецификации, е
         <li>Элемент списка 5</li>  
     </ol>
 
-Будет интерпретировано браузером как:
+будет интерпретирована браузером как:
     
     100. Элемент списка 1
     99. Элемент списка 2
@@ -204,7 +197,7 @@ _Polyfill для `classList`, пока старой спецификации, е
 
 Вкрадце, он останавливает обработку события _сразу же_, а не только всплытие события.
 
-Только Opera до версии 12.10, не поддерживает эту функцию. _[Polyfill](https://github.com/termi/ES5-DOM-SHIM/blob/0.7/__SRC/a.js#L1745) для неё._
+Только Opera до версии 12.10, не поддерживает этот метод. _[Polyfill](https://github.com/termi/ES5-DOM-SHIM/blob/0.7/__SRC/a.js#L1745) для неё._
 
 ## Поддержка IE < 9
 
@@ -213,4 +206,4 @@ _Polyfill для `classList`, пока старой спецификации, е
 Для IE6/7 всё сложнее, нужно либо отказаться от этих браузеров полностью или полностью реализовывать DOM API для них, что я и сделал, о чём рассказывал в своей статье [DOM-shim для всех браузеров включая IE < 8](http://habrahabr.ru/post/133328/).
 
 
-_Код стать выложен на [github]( ). Если вы хотите помочь или нашли ошибку, сделайте pull request или напишите мне в личку. Также напишите в комментариях, если какаю-то тему нужно рассмотреть подробнее или нужно больше примеров._
+_Код стать выложен на [github](https://github.com/termi/CreativeWork/tree/NEW_DOM_ES/RU_ru/New%20in%20DOM%20API). Если вы хотите помочь или нашли ошибку, сделайте pull request или напишите мне в личку. Также напишите в комментариях, если какаю-то тему нужно рассмотреть подробнее или нужно больше примеров._

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbc3edcb-f993-45c2-8d95-4f1c931b3572" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RU_ru/New in DOM API/Readme.md" />
-      <change type="DELETED" beforePath="C:\Dropbox\git-repos\CreativeWork\RU_ru\New in DOM API and ES\Readme.md" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RU_ru/New in DOM API/Readme.md" afterPath="$PROJECT_DIR$/RU_ru/New in DOM API/Readme.md" />
     </list>
     <ignored path="CreativeWork.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +30,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="212" column="100" selection-start="10442" selection-end="10442" vertical-scroll-proportion="0.79268295">
+            <state line="181" column="1" selection-start="9229" selection-end="9229" vertical-scroll-proportion="0.29512194">
               <folding />
             </state>
           </provider>
@@ -291,7 +290,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="100" selection-start="10442" selection-end="10442" vertical-scroll-proportion="0.79268295">
+        <state line="181" column="1" selection-start="9229" selection-end="9229" vertical-scroll-proportion="0.29512194">
           <folding />
         </state>
       </provider>
