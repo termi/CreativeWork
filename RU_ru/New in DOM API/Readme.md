@@ -2,7 +2,7 @@
 
 ## Преамбула
 
-В данной статье я расскажу о новинка в DOM API, которые мы можем использовать уже сейчас или в ближайшем будущем. Публикация статьи приурочена к радостному событию [реализации](https://plus.google.com/u/0/115203843155141445032/posts/VGDqpLHsUjn) некоторых новых DOM4 API методов в Google Chrome.
+В данной статье я расскажу о новинках в DOM API, которые мы можем использовать уже сейчас или в ближайшем будущем. Публикация статьи приурочена к радостному событию начала [реализации](https://plus.google.com/u/0/115203843155141445032/posts/VGDqpLHsUjn) некоторых новых DOM4 API методов в Google Chrome.
 Многие методы и свойства можно использовать уже сейчас, некоторые из них работают через префиксы, но к каждому методу или свойству я постараюсь дать Polyfill, реализующий их или отбрасывающий браузерные префиксы.
 Методы я постарался описать в соответствии с [JSDoc для Google Closure Compiler](https://developers.google.com/closure/compiler/docs/js-for-compiler).
   
@@ -34,7 +34,7 @@
 
 В `document` было добавлено два метода из этих шести: `append` и `prepend`.
 
-DOM4 Mutation methods [реализованы](https://plus.google.com/u/0/115203843155141445032/posts/VGDqpLHsUjn) в последней версии Google Chrome.
+Из всех DOM4 Mutation methods только `remove` [реализован](https://plus.google.com/u/0/115203843155141445032/posts/VGDqpLHsUjn) в последней версии Google Chrome.
 _Polyfill этих методов для всех браузеров есть в моей [библиотеке](https://github.com/termi/ES5-DOM-SHIM/blob/0.7/__SRC/a.js#L2300)._
     
 ## DOM Selector API 2: NodeRef и :scope
@@ -63,6 +63,7 @@ _Polyfill этих методов для всех браузеров есть в
 
     document.findAll("> p", [divElement1, divElement2])
 
+В данный момент WebKit поддерживает псевдо-класс _:scope_, но он делает это [неправильно](http://code.google.com/p/chromium/issues/detail?id=151800). Хорошая новость в том, что после моего баг-репорта, неправильную поддержку _:scope_ [уберут](http://trac.webkit.org/changeset/129408). Если вам всё-таки потребуется проверить настоящую поддержку данного псевдо-класса, вот код для этого: [gist](https://gist.github.com/3784699).
 _Подержку `find[All]` и **:scope** в `querySelectorAll`, соответствующую спецификации, я сейчас делаю._
 
 ## Element.prototype.matches
@@ -123,7 +124,7 @@ _Polyfill для `classList`, пока старой спецификации, е
 
     event = new CustomEvent("somecustom:event", {bubbles : true, cancelable : false, detail : {"some data" : 123}})
 
-Конструкторы `Event` и `CustomEvent` реализованы во всех современных браузерах (уже больше года). _[Polyfill](https://github.com/termi/ES5-DOM-SHIM/blob/0.7/__SRC/a.js#L1662) для старых браузеров._
+Конструкторы `Event` и `CustomEvent` реализованы во всех современных браузерах (уже больше года) кроме Android WebKit браузеров. _[Polyfill](https://github.com/termi/ES5-DOM-SHIM/blob/0.7/__SRC/a.js#L1662) для конструкторов событий._
 
 Также, идёт обсуждение, для специальных событий клавиатуры, Drag&Drop и мыши. Но пока они не реализованы ни одним браузером.
 (Замечание: _Opera 12.10 поддерживает конструктор для `KeyboardEvent`, но он работает не по [спецификации](http://www.w3.org/TR/DOM-Level-3-Events/#events-keyboardevents))_
@@ -201,6 +202,3 @@ _Polyfill для `classList`, пока старой спецификации, е
 В IE8 есть прототипы DOM-объектов, поэтому добавить туда поддержку не составит труда. Я вынес polyfill'ы для IE8 в [отдельный файл](https://github.com/termi/ES5-DOM-SHIM/blob/0.7/__SRC/a.ie8.js) и подключаю его через _Conditional Comments_.
 
 Для IE6/7 всё сложнее, нужно либо отказаться от этих браузеров полностью или полностью реализовывать DOM API для них, что я и сделал, о чём рассказывал в своей статье [DOM-shim для всех браузеров включая IE < 8](http://habrahabr.ru/post/133328/).
-
-
-_Код стать выложен на [github](https://github.com/termi/CreativeWork/tree/NEW_DOM_ES/RU_ru/New%20in%20DOM%20API). Если вы хотите помочь или нашли ошибку, сделайте pull request или напишите мне в личку. Также напишите в комментариях, если какаю-то тему нужно рассмотреть подробнее или нужно больше примеров._
