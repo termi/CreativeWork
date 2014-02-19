@@ -1,8 +1,6 @@
 Подробнее про Стрелочные функции (Arrow functions) в ECMAScript 6
 
-<div style="float:right;margin:0 10px 10px 0" markdown="1">
 ![Arrow functions](http://habrastorage.org/files/ddd/d73/834/dddd73834029457f81df017cf2c25f47.png "Arrow functions")
-</div>
 
 Компиляция из вольного перевода статьи [Understanding ECMAScript 6 arrow functions](http://www.nczonline.net/blog/2013/09/10/understanding-ecmascript-6-arrow-functions/) и чтения последнего черновика [спецификации](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-arrow-function-definitions) (January 20, 2014 Draft Rev 22).
 
