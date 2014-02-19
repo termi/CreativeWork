@@ -206,3 +206,5 @@ var result = values.sort((a, b) => a - b);
 
 Если вы хотите попробовать стрелочные функции, вы можете выполнить примеры выше в консоли Firefox, который на данный
 момент (02.2014 FF28) почти полноценно поддерживает стрелочные функции (FF28 неправильно вычисляет значение **arguments**).
+
+![This is madness](http://habrastorage.org/files/e04/e85/4fd/e04e854fd7c945edb30c8790f46aae04.png "This is madness")
