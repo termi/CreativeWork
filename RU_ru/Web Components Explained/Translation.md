@@ -1,4 +1,4 @@
-# Web Components Explained
+# Введение в Веб-компоненты
 
 Статус: `Эксперементальный драфт`
 
@@ -415,9 +415,10 @@
  * Значение атрибута **is** не начинается с _x-_. В данном случае, атрибут **is** игнорируется.
  * Значение атрибута **name** не начинается с _x-_. В данном случае, определение пользовательского элемента считается невалидным и игнорируется.
 
-## Shadow DOM
+## Скрытый DOM
 
-Shadow DOM is a tree of DOM nodes. Shadow DOM can be applied to a custom element declaratively, by including a template, or to any element imperatively using JavaScript. 
+Скрытый DOM это дерево DOM-элементов. Скрытый DOM может быть применён на пользовательский элемент декларативно, с применением элемента `<template>`, или с помошью
+Скрытый DOM is a tree of DOM nodes. Shadow DOM can be applied to a custom element declaratively, by including a template, or to any element imperatively using JavaScript.
 
 When an element has shadow DOM, the element's children are not rendered; the content of the shadow DOM is rendered instead. 
 Content and Shadow Elements
