@@ -78,7 +78,7 @@ var getTempItem = function(id) { return { id: id, name: "Temp" } };
 ```javascript
 var getTempItems = (...rest) => rest;
 // эквивалент
-var getTempItems = function() { return [].slice.apply(rest) };
+var getTempItems = function() { return [].slice.apply(arguments) };
 ```
 Как видите, несмотря на то, что у стрелочной функции всего один аргумент, всё равно необходимо использовать круглые
 скобки с _шаблонов деструктуризации_. Примеры с другими _шаблонами_:
