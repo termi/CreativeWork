@@ -243,9 +243,9 @@ var result = values.sort((a, b) => a - b);
 Стрелочные функции это одно из интереснейших нововведений в ECMAScript 6, которое, имея краткий синтаксис определения,
 упростит передачу функций в качестве значения параметра другой функции.
 
-Лаконичный синтаксис позволит писать сложные вещи ~~ещё сложнее~~проще. Например так будет выглядеть генератор идентификаторов,
-который на es5 выглядит [куда многословней](http://google.github.io/traceur-compiler/demo/repl.html#var%20idGen%20%3D%20(start%20%3D%200%2C%20id%20%3D%20start%2C%20reset%20%3D%20(newId%20%3D%20start)%20%3D%3E%20id%20%3D%20newId%2C%20next%20%3D%20()%20%3D%3E%20id%2B%2B)%20%3D%3E%0A%09(%7Breset%2C%20next%7D)%3B%0A%0Avar%20gen%20%3D%20idGen(100)%3B%0Aconsole.log(gen.next()%2C%20gen.next()%2C%20gen.reset(10)%2C%20gen.next())%3B%2F%2F100%20101%2010%2010)
-:
+Лаконичный синтаксис позволит писать сложные вещи ~~ещё сложнее~~проще. Например, так будет выглядеть генератор идентификаторов
+(который на es5 выглядит [куда многословней](http://google.github.io/traceur-compiler/demo/repl.html#var%20idGen%20%3D%20(start%20%3D%200%2C%20id%20%3D%20start%2C%20reset%20%3D%20(newId%20%3D%20start)%20%3D%3E%20id%20%3D%20newId%2C%20next%20%3D%20()%20%3D%3E%20id%2B%2B)%20%3D%3E%0A%09(%7Breset%2C%20next%7D)%3B%0A%0Avar%20gen%20%3D%20idGen(100)%3B%0Aconsole.log(gen.next()%2C%20gen.next()%2C%20gen.reset(10)%2C%20gen.next())%3B%2F%2F100%20101%2010%2010)
+):
 ```javascript
 let idGen = (start = 0, id = start, reset = (newId = start) => id = newId, next = () => id++) =>
 	({reset, next});
