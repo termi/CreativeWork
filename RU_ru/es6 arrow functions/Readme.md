@@ -1,6 +1,6 @@
 # Стрелочные функции (Arrow functions) в ECMAScript 6
 
-![Arrow functions madness](http://habrastorage.org/files/b2f/e49/a40/b2fe49a40695402d8cf3c4ff016df5ba.png "Arrow functions madness")
+![Arrow functions madness](http://habrastorage.org/files/555/5c8/ff8/5555c8ff81e74a9db0928264389eebdd.png "Arrow functions madness")
 
 **Оглавление**
 
